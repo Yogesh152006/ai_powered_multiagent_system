@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+import pandas as pd
 from scraper import scrape_news
 from cleaner import clean_data
 from extractor import extract_information
@@ -33,10 +34,17 @@ def home():
 
             "stage": stage,
 
-            "insight": insight
+            "insight": insight,
+            
 
         })
+        
+    dataset = pd.DataFrame(startups)
 
+    dataset.to_csv(
+        "data/startups.csv",
+        index=False
+    )
     return render_template(
         "index.html",
         startups=startups
