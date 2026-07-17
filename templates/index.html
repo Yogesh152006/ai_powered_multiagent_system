@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Startup Intelligence</title>
+
+<style>
+
+table{
+border-collapse:collapse;
+width:100%;
+}
+
+th,td{
+border:1px solid black;
+padding:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Startup Intelligence Dashboard</h2>
+
+<table>
+
+<tr>
+
+<th>Headline</th>
+
+<th>Growth Stage</th>
+
+<th>Insights</th>
+
+</tr>
+
+{% for startup in startups %}
+
+<tr>
+
+<td>{{ startup.title }}</td>
+
+<td>{{ startup.stage }}</td>
+
+<td>{{ startup.insight }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</body>
+
+</html>
